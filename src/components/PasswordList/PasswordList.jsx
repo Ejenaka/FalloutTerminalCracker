@@ -5,16 +5,16 @@ function PasswordList(props) {
   const { items, handleRemovePassword } = props;
 
   useEffect(() => {
-    console.log(items);
+    //console.log(items);
   });
 
   return (
     <div>
       <ul>
-        {items.map(item =>
-          <li>
-            <h3>{item}</h3>
-            <button onClick={() => handleRemovePassword(item)}>X</button>
+        {items.map((item, index) =>
+          <li key={index}>
+            <h3>{item.value}: {item.score}</h3>
+            <button onClick={() => handleRemovePassword(item.value)}>X</button>
           </li>
         )}
       </ul>
